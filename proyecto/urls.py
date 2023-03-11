@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from AppAscenzi.views import index
+from AppAscenzi.views import index, mostrar_mi_template
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', index), # ESTA ES LA NUEVA FUNCTION
+    path('', index),
+    path('mi-template/', mostrar_mi_template),
 ]
