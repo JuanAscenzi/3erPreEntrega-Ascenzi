@@ -1,5 +1,22 @@
-from AppAscenzi.index.html import all 
+<!doctype html>
+<html lang="en">
+  
+{% load static %}
+ 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
 
+    <title>Ascenzi 3erPreEntrega</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'AppAscenzi/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'AppAscenzi/css/cover.css' %}" rel="stylesheet">
 </head>
 
 <body class="text-center">
@@ -8,15 +25,35 @@ from AppAscenzi.index.html import all
     <header class="masthead mb-auto">
       <div class="inner">
         <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link" href="#">Pagina de inicio </a>
-          <a class="nav-link active" href="#">Ventas minoristas</a>
-          <a class="nav-link" href="#">Ventas mayoristas</a>
-          <a class="nav-link" href="#">Pedidos</a>
-          <a class="nav-link" href="#"><form class="d-flex">
+          <a class="nav-link active" href="http://127.0.0.1:8000/admin/">Admin</a>
+          <a class="nav-link active" href="{% url 'index' %}">Pagina de inicio </a>
+          <a class="nav-link active" href="{% url 'minorista' %}">Ventas minoristas</a>
+          <a class="nav-link active" href="{% url 'mayorista' %}">Ventas mayoristas</a>
+          <a class="nav-link active" href="{% url 'pedidos' %}">Pedidos</a>
+          <a class="nav-link active" href="#"><form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
+            <button class="btn btn-outline-success" type="submit"><a href="{% url 'busqueda' %}">Buscar</a></button>
             </form></a>
         </nav>
       </div>
     </header>
 
+    {% block principal %}
+
+    {% endblock %}
+
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Link del repositorio <a href="https://github.com/JuanAscenzi/3erPreEntrega-Ascenzi"> Haz click aqui</a></p>
+        </div>
+      </footer>
+
+          <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="{% static 'AppAscenzi/js/popper.min.js' %}"></script>
+    <script src="{% static 'AppAscenzi/js/bootstrap.min.js' %}"></script>
+  </body>
+</html>

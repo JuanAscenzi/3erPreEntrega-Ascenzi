@@ -1,3 +1,6 @@
 from django.contrib import admin
+from AppAscenzi.models import Mayorista, Minorista, Pedido
 
-# Register your models here.
+admin.site.register(Mayorista)
+admin.site.register(Minorista)
+admin.site.register(Pedido)

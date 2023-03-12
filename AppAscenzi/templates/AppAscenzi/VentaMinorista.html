@@ -1,0 +1,30 @@
+{% extends "AppAscenzi/base.html" %}
+{% load static %}
+
+{% block principal %}
+
+<main role="main" class="inner cover">
+  <center><img src="{% static 'AppAscenzi/assets/imagenes/bichos.jpeg' %}" alt="centered image" height="450" width="670"> </center>
+  <p></p>
+<main class="text-center">
+    <form action="/Venta minorista/"  method="post">{% csrf_token %}
+        <br>
+    <p> Nombre:<br> 
+        <input type = "text" name="nombre">
+    <p> Apellido:<br>
+        <input type = "text" name="dni">
+    <p> Dni:<br>
+        <input type = "text" name="dni">
+    <p> Telefono:<br>
+        <input type = "text" name="telefono">
+    <p> Email:<br>
+        <input type = "text" name="email">
+    <p> Direccion:<br>
+        <input type = "text" name="direccion">
+    <p> Codigo postal:<br>
+        <input type = "text" name="codigo_postal"><br>
+        <br>
+    <input type = "submit" value="Enviar">
+    </form>
+</main>
+{% endblock %}
