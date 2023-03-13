@@ -27,13 +27,14 @@
         <nav class="nav nav-masthead justify-content-center">
           <a class="nav-link active" href="http://127.0.0.1:8000/admin/">Admin</a>
           <a class="nav-link active" href="{% url 'index' %}">Pagina de inicio </a>
-          <a class="nav-link active" href="{% url 'minorista' %}">Ventas minoristas</a>
-          <a class="nav-link active" href="{% url 'mayorista' %}">Ventas mayoristas</a>
+          <a class="nav-link active" href="{% url 'minorista_formulario' %}">Ventas minoristas</a>
+          <a class="nav-link active" href="{% url 'mayorista_formulario' %}">Ventas mayoristas</a>
           <a class="nav-link active" href="{% url 'pedidos' %}">Pedidos</a>
-          <a class="nav-link active" href="#"><form class="d-flex">
+          <a class="nav-link active" href="#">
+          <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
             <button class="btn btn-outline-success" type="submit"><a href="{% url 'busqueda' %}">Buscar</a></button>
-            </form></a>
+          </form></a>
         </nav>
       </div>
     </header>

@@ -1,5 +1,7 @@
 from django import forms
- 
-class Venta_mayorista(forms.Form):
-    nombre = forms.CharField()
-    apellido = forms.IntegerField()
+from AppAscenzi.models import Minorista
+
+class MinForm(forms.ModelForm):
+    class Meta:
+        model = Minorista
+        fields = '__all__'

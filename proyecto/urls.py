@@ -15,18 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from AppAscenzi.views import index, pedidos, form_minor, form_mayor, busqueda, Venta_mayorista, Venta_minorista, Minorista_formulario, Mayorista_formulario
+from AppAscenzi.views import index, pedidos, busqueda, Minorista_formulario, Mayorista_formulario, reset_Minorista
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="index"),
     path('mis-pedidos/', pedidos, name="pedidos"),
-    path('compra-minorista/', form_minor, name="minorista"),
-    path('compra-mayorista/', form_mayor, name="mayorista"),
     path('buscar/', busqueda, name="busqueda"),
-    path('venta-minorista/', Venta_minorista, name="minorista"),
-    path('venta-mayorista/', Venta_mayorista, name="mayorista"),
     path('formulario-mayorista/', Mayorista_formulario, name="mayorista_formulario"),
     path('formulario-minorista/', Minorista_formulario, name="minorista_formulario"),
+    path('formulario-minorista/reseteo', reset_Minorista, name="minorista_formulario_reseteado"),
 ]
 

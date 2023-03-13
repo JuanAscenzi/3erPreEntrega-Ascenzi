@@ -8,7 +8,7 @@ class Mayorista(models.Model):
     direccion= models.CharField(max_length=50)
     codigo_postal=models.CharField(max_length=4)
 
-    def str(self):
+    def __str__(self):
         return f"""Datos del cliente mayorista: 
     Nombre del comprador: {self.nombre}
     CUIL: {self.cuil}                           
@@ -27,7 +27,7 @@ class Minorista(models.Model):
     direccion= models.CharField(max_length=50)
     codigo_postal=models.CharField(max_length=4)
 
-    def str(self):
+    def __str__(self):
         return f"""Datos del cliente minorista: 
     Nombre del comprador: {self.nombre}
     Apellido del comprador: {self.apellido} 
@@ -46,7 +46,7 @@ class Pedido(models.Model):
     cantidad=models.CharField(max_length=5) #digitos
     quien_retira=models.CharField(max_length=50)
 
-    def str(self):
+    def __str__(self):
         return f"""Datos del pedido: 
     Precio del producto: {self.precio} 
     Marca del producto{self.marca}
