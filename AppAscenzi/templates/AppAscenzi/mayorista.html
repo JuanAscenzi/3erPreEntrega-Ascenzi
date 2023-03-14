@@ -7,7 +7,22 @@
   <center><img src="{% static 'AppAscenzi/assets/imagenes/mstrinc.jpeg' %}" alt="centered image" height="450" width="670"> </center>
   <br>
   <center><h1 class="cover-heading">Formulario para los clientes mayoristas </h1></center>
-</main>
-  
+  <center><form action="{% url 'buscar_mayorista' %}"class="d-flex">
+    <input class="text-center" name="criterio" type="search" placeholder="Buscar nombre" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Buscar</button>
+  </form></center>
+  <form action="{% url 'mayorista_formulario' %}" method="post">
+   <br>
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Enviar">
+  </form>
+  <ul>
+    {% for mayorista in mayoristas %}
 
-{% endblock %}
+    <li> ● Id: {{mayorista.id}} ● Nombre del comprador: {{mayorista.nombre}} ● Domicilio: {{mayorista.direccion}} ● Correo electronico: {{mayorista.email}}</li>
+
+    {% endfor %}
+  </ul>
+    {% endblock %}
+

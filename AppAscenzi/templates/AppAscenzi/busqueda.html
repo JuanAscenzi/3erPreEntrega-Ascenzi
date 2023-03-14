@@ -7,7 +7,19 @@
   <center><img src="{% static 'AppAscenzi/assets/imagenes/toystory.jpeg' %}" alt="centered image" height="450" width="670"> </center>
   <br>
   <center><h1 class="cover-heading">Formulario de busquedas</h1></center>
-  </main>
+  
+  {% for minorista in minoristas %}
+
+<li> ● Id: {{minorista.id}} ● Nombre del comprador: {{minorista.nombre}} ● Domicilio: {{minorista.direccion}} ● Correo electronico: {{minorista.email}}</li>
+
+    {% endfor %}
+  {% for mayorista in mayoristas %}
+
+    <li> ● Id: {{mayorista.id}} ● Nombre: {{mayorista.nombre}} ● CUIL: {{mayorista.cuil}} ● DNI: {{mayorista.dni}}</li>
+    
+    {% endfor %}
+
+</main>
   
 
 {% endblock %}

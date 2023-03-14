@@ -1,13 +1,26 @@
-from AppAscenzi.models import Mayorista
+from AppAscenzi.models import Mayorista, Minorista, Pedido
 
-Mayorista(nombre_de_empresa = "WorldTech",
-          cuit = "5468352445",
-          nombre = "Matias",
-          apellido = "Palmero",
-          fecha_de_nacimiento = "21-10-92",
-          dni = "37561345",
+Mayorista(nombre = "WorldTech",
+          cuil = "5468352445",
+          telefono = "03416253251",
           email = "info@worldtech.com",
           direccion = "Lavalle 925",
-          telefono = "03416253251",
           codigo_postal = "2000",
+        ).save()
+
+Minorista(nombre = "WorldTech",
+          apellido = "Palmero",
+          dni = "37561345",
+          telefono = "03416253251",
+          email = "info@worldtech.com",
+          direccion = "Lavalle 925",
+          codigo_postal = "2000",
+        ).save()
+
+Pedido(precio = "5468352445",
+          marca = "Matias",
+          medio_de_pago = "Efvo",
+          nombre_comprador = "Luis Miguel",
+          cantidad = "37",
+          quien_retira = "Marcos Alonso",
         ).save()

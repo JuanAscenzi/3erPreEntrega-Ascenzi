@@ -6,7 +6,22 @@
 <main role="main" class="inner cover">
   <center><img src="{% static 'AppAscenzi/assets/imagenes/increibles.jpeg' %}" alt="centered image" height="450" width="670"> </center>
   <br>
-  <center><h1 class="cover-heading">Pedidos </h1></center>
-</main>
+  <center><h1 class="cover-heading">Formulario para los pedidos </h1></center>
+  <center><form action="{% url 'buscar_pedidos' %}"class="d-flex">
+    <input class="text-center" name="criterio" type="search" placeholder="Buscar nombre del comprador" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Buscar</button>
+  </form></center>
+  <form action="{% url 'pedidos_formulario' %}" method="post">
+   <br>
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Enviar">
+  </form>
+  <ul>
+    {% for pedido in pedidos %}
 
-{% endblock %}
+    <li> ● Nombre del comprador: {{pedido.nombre_comprador}} ● Persona que retira: {{pedido.quien_retira}}  ● Medio de pago: {{pedido.medio_de_pago}} ● Precio final: {{pedido.precio}}</li>
+
+    {% endfor %}
+  </ul>
+    {% endblock %}
