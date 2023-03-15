@@ -12,7 +12,4 @@ urlpatterns = [
     path('formulario-mayorista/', Mayorista_formulario, name="mayorista_formulario"),
     path('formulario-minorista/', Minorista_formulario, name="minorista_formulario"),
     path('formulario-pedido/', Pedidos_formulario, name="pedidos_formulario"),
-    # path('formulario-mayorista/reseteo', reset_Mayorista, name="mayorista_formulario_reseteado"),
-    # path('formulario-minorista/reseteo', reset_Minorista, name="minorista_formulario_reseteado"),
-    # path('formulario-pedido/reseteo', reset_Pedido, name="pedido_formulario_reseteado"),
 ]
