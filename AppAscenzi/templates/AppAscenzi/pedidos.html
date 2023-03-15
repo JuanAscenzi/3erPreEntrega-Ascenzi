@@ -12,16 +12,18 @@
     <button class="btn btn-outline-success" type="submit">Buscar</button>
   </form></center>
   <form action="{% url 'pedidos_formulario' %}" method="post">
-   <br>
+  <br>
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit" value="Enviar">
   </form>
   <ul>
     {% for pedido in pedidos %}
-
+    
     <li> ● Nombre del comprador: {{pedido.nombre_comprador}} ● Persona que retira: {{pedido.quien_retira}}  ● Medio de pago: {{pedido.medio_de_pago}} ● Precio final: {{pedido.precio}}</li>
-
+    
     {% endfor %}
   </ul>
+</main>
     {% endblock %}
+

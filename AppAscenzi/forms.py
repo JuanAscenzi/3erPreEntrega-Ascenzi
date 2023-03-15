@@ -1,5 +1,5 @@
 from django import forms
-from AppAscenzi.models import Minorista, Mayorista, Pedido
+from AppAscenzi.models import *
 
 class MinForm(forms.ModelForm):
     class Meta:

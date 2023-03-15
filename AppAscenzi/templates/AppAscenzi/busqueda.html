@@ -8,18 +8,22 @@
   <br>
   <center><h1 class="cover-heading">Formulario de busquedas</h1></center>
   
+  {% for pedido in pedidos %}
+    <li> ● Nombre del comprador: {{pedido.nombre_comprador}} ● Persona que retira: {{pedido.quien_retira}}  ● Medio de pago: {{pedido.medio_de_pago}} ● Precio final: {{pedido.precio}}</li>
+  {% endfor %}
+  
   {% for minorista in minoristas %}
 
-<li> ● Id: {{minorista.id}} ● Nombre del comprador: {{minorista.nombre}} ● Domicilio: {{minorista.direccion}} ● Correo electronico: {{minorista.email}}</li>
+<li>● Nombre del comprador: {{minorista.nombre}} ● Domicilio: {{minorista.direccion}} ● Correo electronico: {{minorista.email}}</li>
+  
+  {% endfor %}
 
-    {% endfor %}
+  
   {% for mayorista in mayoristas %}
-
-    <li> ● Id: {{mayorista.id}} ● Nombre: {{mayorista.nombre}} ● CUIL: {{mayorista.cuil}} ● DNI: {{mayorista.dni}}</li>
-    
-    {% endfor %}
+    <li>● Nombre: {{mayorista.nombre}} ● CUIL: {{mayorista.cuil}} ● DNI: {{mayorista.dni}}</li> 
+  {% endfor %}
 
 </main>
   
-
-{% endblock %}
+  
+  {% endblock %}

@@ -7,12 +7,12 @@
   <center><img src="{% static 'AppAscenzi/assets/imagenes/bichos.jpeg' %}" alt="centered image" height="450" width="670"> </center>
   <br>
   <center><h1 class="cover-heading">Formulario para los clientes minoristas </h1></center>
-  <center><form action="{% url 'buscar_minorista' %}"class="d-flex">
-    <input class="text-center" name="criterio" type="search" placeholder="Buscar nombre" aria-label="Search">
+  <center><form action="{% url 'buscar_minorista'%}"class="d-flex">
+    <input class="text-center" name="criterio" type="search" placeholder="Buscar cliente" aria-label="Search">
     <button class="btn btn-outline-success" type="submit">Buscar</button>
   </form></center>
   <form action="{% url 'minorista_formulario' %}" method="post">
-   <br>
+  <br>
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit" value="Enviar">
@@ -20,8 +20,9 @@
   <ul>
     {% for minorista in minoristas %}
 
-    <li> ● Id: {{minorista.id}} ● Nombre del comprador: {{minorista.nombre}} ● Domicilio: {{minorista.direccion}} ● Correo electronico: {{minorista.email}}</li>
-
+    <li>● Nombre del comprador: {{minorista.nombre}} ● Domicilio: {{minorista.direccion}} ● Correo electronico: {{minorista.email}}</li>
+    
     {% endfor %}
   </ul>
+</main>
     {% endblock %}

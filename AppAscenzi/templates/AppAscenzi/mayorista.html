@@ -12,17 +12,18 @@
     <button class="btn btn-outline-success" type="submit">Buscar</button>
   </form></center>
   <form action="{% url 'mayorista_formulario' %}" method="post">
-   <br>
+  <br>
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit" value="Enviar">
   </form>
   <ul>
     {% for mayorista in mayoristas %}
-
-    <li> ● Id: {{mayorista.id}} ● Nombre del comprador: {{mayorista.nombre}} ● Domicilio: {{mayorista.direccion}} ● Correo electronico: {{mayorista.email}}</li>
-
+    
+    <li>● Nombre: {{mayorista.nombre}} ● CUIL: {{mayorista.cuil}} ● DNI: {{mayorista.dni}}</li> 
+    
     {% endfor %}
   </ul>
+</main>
     {% endblock %}
 
