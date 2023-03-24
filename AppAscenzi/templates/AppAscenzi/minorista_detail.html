@@ -1,0 +1,9 @@
+{% extends "AppAscenzi/base.html" %}
+{% load static %}
+{% block principal %}
+<ul class="mt-5 list-unstyled">
+    <li>● Nombre del comprador: {{minorista.nombre}} ●Apellido: {{minorista.apellido}} ●DNI: {{minorista.dni}} ●CUIL: {{minorista.cuil}} ●Telefono: {{minorista.telefono}} ● Correo electronico: {{minorista.email}} ● Domicilio: {{minorista.direccion}} ● CP: {{minorista.codigo_postal}}
+    </li>
+</ul>
+
+{% endblock %}

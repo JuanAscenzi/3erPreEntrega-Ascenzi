@@ -1,0 +1,16 @@
+{% extends "AppAscenzi/base.html" %}
+{% load static %}
+{% block principal %}
+<ul class="mt-5 list-unstyled" >
+    {% for minorista in object_list %}
+
+    <li>● Nombre y apellido del comprador: {{minorista.nombre}} {{minorista.apellido}} ● Domicilio: {{minorista.direccion}}
+        <a href="{% url 'min-detail' minorista.id %}">Detalles</a>
+        <a href="{% url 'min-update' minorista.id %}">Actualizar</a>
+        <a href="{% url 'min-delete' minorista.id %}">Eliminar</a>
+    </li>
+    
+    {% endfor %}
+  </ul>
+
+{% endblock %}

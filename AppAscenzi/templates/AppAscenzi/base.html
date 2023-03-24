@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Ascenzi 3erPreEntrega</title>
+    <title>Proyecto final Juan Ignacio Ascenzi Marquez</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'AppAscenzi/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -27,9 +27,16 @@
         <nav class="nav nav-masthead justify-content-center">
           <a class="nav-link active" href="http://127.0.0.1:8000/admin/">Admin</a>
           <a class="nav-link active" href="{% url 'index' %}">Pagina de inicio </a>
+          <a class="nav-link active" href="{% url 'min-list' %}">Listado minoristas</a>
+          <a class="nav-link active" href="{% url 'min-create' %}">Nuevo comprador minorista</a>
           <a class="nav-link active" href="{% url 'minorista_formulario' %}">Ventas minoristas</a>
           <a class="nav-link active" href="{% url 'mayorista_formulario' %}">Ventas mayoristas</a>
           <a class="nav-link active" href="{% url 'pedidos_formulario' %}">Pedidos</a>
+          
+          <form action="{% url 'min-search'%}"class="d-flex">
+            <input class="text-center" name="criterio" type="search" placeholder="Buscar cliente" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
         </nav>
       </div>
     </header>
@@ -40,7 +47,7 @@
 
     <footer class="mastfoot mt-auto">
         <div class="inner">
-          <p>Link del repositorio <a href="https://github.com/JuanAscenzi/3erPreEntrega-Ascenzi"> Haz click aqui</a></p>
+          <p>Link del repositorio<a href="https://github.com/JuanAscenzi/3erPreEntrega-Ascenzi">ñHaz click aqui</a></p>
         </div>
       </footer>
 

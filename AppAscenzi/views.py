@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from AppAscenzi.models import Mayorista, Minorista, Pedido
 from AppAscenzi.forms import  MayForm, MinForm, PedForm
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 
 def index(request):
     return render(request, "AppAscenzi/index.html")
@@ -55,3 +57,33 @@ def Pedidos_formulario(request):
         "pedidos": Pedido.objects.all()
     }
     return render(request,"AppAscenzi/pedidos.html", context)
+
+class MinList(ListView): 
+    model = Minorista
+    context_object_name = "minoristas"
+
+class MinDetail(DetailView):
+    model = Minorista
+    context_object_name = "minorista"
+
+class MinUpdate(UpdateView):
+    model = Minorista
+    success_url = reverse_lazy("min-list")
+    fields = '__all__'
+
+class MinDelete(DeleteView):
+    model = Minorista
+    success_url = reverse_lazy("min-list")
+
+class MinCreate(CreateView):
+    model = Minorista
+    success_url = reverse_lazy("min-list")
+    fields = '__all__'
+
+class MinSearch(ListView):
+    model = Minorista
+    context_object_name = "minoristas"
+    def get_queryset(self):
+        criterio = self.request.GET.get("criterio")
+        result = Minorista.objects.filter(nombre__icontains=criterio).all()
+        return result
